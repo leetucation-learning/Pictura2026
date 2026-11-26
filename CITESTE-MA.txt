@@ -1,0 +1,8 @@
+PICTEAZĂ ORAȘUL. · e-learning, versiunea 1.0, noiembrie 2026
+
+Deschide index.html dintr-un server web (GitHub Pages, LMS sau orice găzduire).
+Dublu-clic pe index.html, direct de pe disc, poate bloca sunetul și clipurile în unele browsere.
+
+Pachetul SCORM (fișierul ..._SCORM2004_v1.0.zip) se încarcă în LMS ca atare, fără dezarhivare.
+Cursul e finalizat (completed + passed) când cursantul ajunge la bibliografia fiecăruia dintre cele 4 module.
+Scorul raportat = media exercițiilor notate, la prima încercare.

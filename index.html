@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pictează orașul. · Urban Instances V3 – Cetatea citită</title>
+<meta name="description" content="Curs e-learning: peisajul urban în acrilic, după fotografie. Atelierul de pictură al lui Ștefan Curelici, Urban Instances V3 – Cetatea citită, Timișoara.">
+<meta name="author" content="Gelu-Emanuel Cebzan · LEETUCATION SRL">
+<meta name="theme-color" content="#0F1014">
+<link rel="icon" href="media/brand/favicon.png">
+<link rel="preload" href="fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/phone.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z" fill="currentColor"/></symbol>
+  <symbol id="i-replay" viewBox="0 0 24 24"><path d="M12 5V1.5L7 6l5 4.5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z" fill="currentColor"/></symbol>
+  <symbol id="i-all" viewBox="0 0 24 24"><path d="M4 5h16v2H4zM4 11h16v2H4zM4 17h10v2H4z" fill="currentColor"/></symbol>
+  <symbol id="i-vol" viewBox="0 0 24 24"><path d="M4 9h4l5-4.5v15L8 15H4zM16 8.5a5 5 0 0 1 0 7l-1.4-1.4a3 3 0 0 0 0-4.2zM18.6 5.9a8.6 8.6 0 0 1 0 12.2l-1.4-1.4a6.6 6.6 0 0 0 0-9.4z" fill="currentColor"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6h17v2h-17zM3.5 11h17v2h-17zM3.5 16h17v2h-17z" fill="currentColor"/></symbol>
+  <symbol id="i-ws" viewBox="0 0 24 24"><path d="M6 2.5h8.5L19 7v14.5H6zM14 3.8V7.5h3.7M8.5 11h8M8.5 14h8M8.5 17h5.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5v2H6v3zM15 4h5v5h-2V6h-3zM20 15v5h-5v-2h3v-3zM9 20H4v-5h2v3h3z" fill="currentColor"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15.5 4.5 8 12l7.5 7.5 1.4-1.4L10.8 12l6.1-6.1z" fill="currentColor"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M8.5 4.5 16 12l-7.5 7.5-1.4-1.4 6.1-6.1-6.1-6.1z" fill="currentColor"/></symbol>
+  <symbol id="i-rot" viewBox="0 0 24 24"><path d="M7 3h9a2 2 0 0 1 2 2v6h-2V5H7zM5 9h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2zm0 2v8h7v-8zM20 13l2.5 3h-5z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="app">
+  <div id="canvas">
+    <main id="stage" aria-live="off"></main>
+    <div id="capband" aria-hidden="true"><p id="cap"></p></div>
+    <nav id="bar" aria-label="Comenzile cursului">
+      <button class="cb" id="bToc" title="Cuprins" aria-label="Cuprins"><svg><use href="#i-menu"/></svg><span class="lb-t">Cuprins</span></button>
+      <button class="cb" id="bWs" title="Fișa de lucru a modulului" aria-label="Fișa de lucru a modulului"><svg><use href="#i-ws"/></svg><span class="lb-t">Fișa</span></button>
+      <span class="sep"></span>
+      <button class="cb" id="bPlay" title="Pornește vocea" aria-label="Pornește vocea"><svg><use href="#i-play"/></svg></button>
+      <button class="cb" id="bReplay" title="Ascultă din nou ecranul" aria-label="Ascultă din nou ecranul"><svg><use href="#i-replay"/></svg></button>
+      <button class="cb" id="bAll" title="Arată tot ecranul acum" aria-label="Arată tot ecranul acum"><svg><use href="#i-all"/></svg></button>
+      <button class="cb" id="bCC" title="Subtitrare" aria-label="CC: subtitrare" aria-pressed="false"><b class="cc">CC</b></button>
+      <button class="cb" id="bVoice" title="Vocea pornită sau oprită" aria-label="Vocea" aria-pressed="true"><svg><use href="#i-vol"/></svg></button>
+      <label class="sr" for="speed">Viteza vocii</label>
+      <select id="speed" title="Viteza vocii"><option value="0.85">0,85×</option><option value="1" selected>1×</option><option value="1.15">1,15×</option><option value="1.3">1,3×</option></select>
+      <span class="sep"></span>
+      <span class="pos" id="pos" aria-label="Poziția în curs">1 / 53</span>
+      <button class="cb" id="bFull" title="Ecran complet" aria-label="Ecran complet" aria-pressed="false"><svg><use href="#i-full"/></svg></button>
+      <button class="cb nav" id="bPrev" aria-label="Înapoi: ecranul anterior"><svg><use href="#i-prev"/></svg><span class="lb-t">Înapoi</span></button>
+      <button class="cb nav next" id="bNext" aria-label="Înainte: ecranul următor"><span class="lb-t">Înainte</span><svg><use href="#i-next"/></svg></button>
+      <div class="prog" aria-hidden="true"><i id="progI"></i></div>
+    </nav>
+    <div id="toast" role="status" hidden></div>
+    <div id="intro">
+      <video id="introV" src="media/brand/logo_animat_cp.mp4" muted playsinline preload="auto" aria-label="Logo animat: Centrul de Proiecte Timișoara"></video>
+      <button class="btn sm skip" id="skip">Sari peste</button>
+    </div>
+  </div>
+</div>
+<audio id="vo" preload="auto"></audio>
+<p id="live" class="sr" aria-live="polite"></p>
+<div id="print"></div>
+<noscript><p style="color:#fff;padding:40px;font:20px sans-serif">Cursul are nevoie de JavaScript.</p></noscript>
+
+<script src="js/config.js"></script>
+<script src="js/scorm.js"></script>
+<script src="js/data.js"></script>
+<script src="audio/vo.js"></script>
+<script src="js/docx.js"></script>
+<script src="js/ex.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>

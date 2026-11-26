@@ -1,0 +1,91 @@
+/* Pictează orașul · modul telefon (html.m): ecranele curg pe verticală, în unități de design micșorate cu --z. */
+html.m,html.m body{height:auto;min-height:100%;background:var(--ink)}
+html.m .app{position:static;overflow:visible}
+html.m #canvas{position:relative;left:0;top:0;transform:none;width:calc(100vw / var(--z));height:auto;min-height:calc(100vh / var(--z));zoom:var(--z)}
+html.m #stage{width:auto;height:auto;min-height:calc(100vh / var(--z) - 120px);overflow:visible}
+html.m .slide{position:relative;inset:auto;min-height:calc(100vh / var(--z) - 120px);padding:120px 48px 80px;overflow:visible}
+html.m .hd{left:48px;right:48px;top:40px;font-size:26px}
+html.m .hd span+span{display:none}
+html.m .ft{position:static;margin-top:40px;font-size:24px}
+
+/* coloanele devin rânduri */
+html.m .row,html.m .start,html.m .opener,html.m .final,html.m .vz,html.m .cmp,html.m .after{flex-direction:column;display:flex;gap:40px;flex:none}
+html.m .row>.col,html.m .row>[class*="w"]{flex:none!important;width:100%}
+html.m .st-text,html.m .op-media,html.m .fin-r{flex:none;width:100%}
+html.m .fin-r{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:30px}
+html.m .grow{flex:none}
+html.m .cmp{display:flex}
+html.m .tt-row{flex-direction:column;align-items:flex-start;gap:10px}
+html.m .exbtns{padding-bottom:12px}
+
+/* grile: o coloană (două pe ecrane late) */
+html.m .g2,html.m .g3,html.m .g4,html.m .quad,html.m .schs,html.m .stx,html.m .match,html.m .mcards,html.m .trio,html.m .props,html.m .techx,html.m .gal,html.m .hrow,html.m .notes.two{grid-template-columns:1fr;flex:none}
+html.m.m-wide .g3,html.m.m-wide .g4,html.m.m-wide .quad,html.m.m-wide .schs,html.m.m-wide .mcards,html.m.m-wide .props,html.m.m-wide .gal,html.m.m-wide .match{grid-template-columns:1fr 1fr}
+html.m .tl{grid-template-columns:repeat(3,1fr)}
+html.m .tl-it img{height:260px}
+html.m .bands{display:none}
+
+/* înălțimi explicite pentru imagini (în modul telefon nu mai există o înălțime fixă de ecran) */
+html.m .col>.art .fr,html.m .trio .art .fr,html.m .gam .art.fixh .fr{height:620px;flex:none}
+html.m .op-media{height:640px}
+html.m .st-img{height:760px;flex:none}
+html.m .photo.grow,html.m .col>.photo.grow,html.m .col>.vt.grow{height:680px;flex:none}
+html.m .portrait{height:820px!important}
+html.m .hotwrap{height:auto;flex:none}
+html.m .mcard .mimg{height:300px;flex:none}
+html.m .quad .ovbox>img{max-height:700px}
+html.m .stc .ovbox>img{max-height:640px}
+html.m .bwbox{height:620px;flex:none}
+html.m .vals>div,html.m .gam>div{min-height:auto}
+html.m .pair{height:640px;flex:none}
+html.m .cmp-b .w-photo{height:600px;flex:none}
+html.m .vids .vt{height:560px}
+html.m .gal li{height:620px}
+html.m .wheel{width:860px;height:860px}
+html.m .bib{columns:1;overflow:visible}
+html.m .wsbox{overflow:visible}
+html.m .fbform{overflow:visible}
+html.m table.tb.big{font-size:26px}
+html.m table.tb.big thead th{font-size:34px}
+html.m .bignum{font-size:200px;top:-10px}
+html.m .loop{transform:scale(.9);transform-origin:0 0}
+html.m .vz-out{flex:none;width:100%}
+html.m .seq .mv .btn{width:96px;min-height:96px}
+
+/* textul puțin mai mare decât pe ecranul mare */
+html.m h1.t.xl{font-size:150px}
+html.m h1.t.l{font-size:120px}
+html.m h1.t.m,html.m h1.t.s{font-size:84px}
+html.m .notes li,html.m .obj li{font-size:36px}
+html.m .lead,html.m .lead.s,html.m .body{font-size:38px}
+html.m .small,html.m .art figcaption{font-size:28px}
+html.m .opt{font-size:32px;min-height:96px}
+html.m .btn{min-height:96px;font-size:32px}
+html.m .btn.sm{min-height:84px;font-size:30px}
+html.m .hot{width:110px;height:110px}
+html.m .hot .dot{width:80px;height:80px;font-size:32px}
+
+/* bara de jos rămâne vizibilă */
+html.m #capband{position:sticky;bottom:120px;z-index:21;height:auto;min-height:0;padding:16px 40px}
+html.m #capband:has(#cap:empty){display:none}
+html.m #cap{font-size:40px}
+html.m #bar{position:sticky;bottom:0;z-index:22;height:120px;gap:6px;padding:0 16px}
+html.m .cb{height:104px;min-width:104px;padding:0 10px}
+html.m .cb svg{width:44px;height:44px}
+html.m .cb .lb-t,html.m #bReplay,html.m #bAll,html.m #speed,html.m #bFull,html.m .pos{display:none}
+html.m .cb .cc{font-size:30px}
+html.m .cb.nav{min-width:130px}
+
+/* ferestrele acoperă ecranul telefonului */
+html.m .modal,html.m .lb,html.m #intro{position:fixed;inset:0}
+html.m .dlg{width:100%;max-height:100%;height:100%}
+html.m .toc{grid-template-columns:1fr}
+html.m .toc li a{font-size:32px;padding:12px 8px}
+html.m .lb{padding:40px 24px}
+html.m .lb img{max-height:70vh}
+html.m #intro video{width:100%;height:auto}
+html.m #toast{position:fixed;bottom:160px;font-size:34px;max-width:90%}
+html.m .col>.art .fr,html.m .trio .art .fr,html.m .op-media .art .fr{height:auto;flex:none}
+html.m .art img{max-height:900px}
+html.m .op-media{height:auto}
+html.m .op-media .vt{height:640px}
