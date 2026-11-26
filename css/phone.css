@@ -89,3 +89,5 @@ html.m .col>.art .fr,html.m .trio .art .fr,html.m .op-media .art .fr{height:auto
 html.m .art img{max-height:900px}
 html.m .op-media{height:auto}
 html.m .op-media .vt{height:640px}
+html.m .chg{grid-template-columns:1fr}
+html.m .cx-ctl{font-size:28px}

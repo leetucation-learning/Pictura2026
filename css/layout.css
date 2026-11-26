@@ -374,3 +374,23 @@ table.tb.big td{padding:18px 16px}
 .prot{display:flex;align-items:center;justify-content:center;text-align:center;background:#1B1D23;color:#C6C8CE;font-size:22px;line-height:1.4;padding:30px;min-height:200px;width:100%;height:100%}
 .fbok{font-size:22px;font-weight:600;color:var(--ink)}
 #cap{font-size:25px;line-height:1.2}
+
+/* 2.1 fotografia și pictura, comparate */
+.cmpx{position:relative;aspect-ratio:3/2;width:100%;overflow:hidden;background:#15161a;touch-action:none;cursor:ew-resize;user-select:none;box-shadow:0 30px 60px -34px rgba(0,0,0,.6)}
+.cmpx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+.cx-b{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
+.cx-h{position:absolute;top:0;bottom:0;left:50%;width:4px;margin-left:-2px;background:#E4EF3B;box-shadow:0 0 0 1px rgba(15,16,20,.5)}
+.cx-h i{position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#E4EF3B;border:3px solid #0F1014}
+.cx-h i::before,.cx-h i::after{content:"";position:absolute;top:50%;margin-top:-7px;border:7px solid transparent}
+.cx-h i::before{left:3px;border-right:9px solid #0F1014;border-left:0}
+.cx-h i::after{right:3px;border-left:9px solid #0F1014;border-right:0}
+.cmpx .tag.cx-l{left:14px;right:auto;top:14px;bottom:auto}
+.cmpx .tag.cx-r{right:14px;left:auto;top:14px;bottom:auto}
+.cx-ctl{display:flex;align-items:center;gap:20px;margin:14px 0 12px;font-size:21px;color:var(--fg3)}
+.cx-ctl label{flex:none}
+.cx-ctl input{flex:1;accent-color:var(--ink);height:36px}
+.chg{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.chg li{border-top:3px solid var(--ink);padding-top:10px;font-size:22px;line-height:1.35;color:var(--fg2)}
+.chg li b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;color:var(--fg);margin-bottom:4px}
+.trio .idea{margin:12px 0 0;font-size:22px;line-height:1.35;color:var(--fg2)}
+.trio .idea strong{color:var(--fg)}

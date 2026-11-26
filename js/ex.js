@@ -195,6 +195,24 @@
     });
   };
 
+  /* ---------- 2.1 fotografia și pictura, comparate cu un cursor ---------- */
+  R.cmpx=function(sl,cur,api){
+    var box=$('#cmp21',sl), b=$('.cx-b',box), h=$('.cx-h',box), r=$('#cx21',sl);
+    var set=function(v){ v=Math.max(0,Math.min(100,v)); b.style.clipPath='inset(0 0 0 '+v+'%)'; h.style.left=v+'%'; r.value=v;
+      r.setAttribute('aria-valuetext',v<15?'aproape doar pictura':(v>85?'aproape doar fotografia':'fotografia în stânga, pictura în dreapta')); };
+    r.addEventListener('input',function(){ set(+r.value); });
+    var drag=false, pos=function(e){ var q=box.getBoundingClientRect(); set((e.clientX-q.left)/q.width*100); };
+    box.addEventListener('pointerdown',function(e){ drag=true; box.setPointerCapture(e.pointerId); pos(e); });
+    box.addEventListener('pointermove',function(e){ if(drag) pos(e); });
+    box.addEventListener('pointerup',function(){ drag=false; }); box.addEventListener('pointercancel',function(){ drag=false; });
+    set(50);
+    /* o mică demonstrație când apare imaginea, ca să se vadă că se poate trage */
+    var shown=false, t0=0, demo=function(ts){ if(!t0) t0=ts; var k=(ts-t0)/2200; if(k>=1||drag){ if(!drag) set(50); return; } set(50+28*Math.sin(k*Math.PI*2)); requestAnimationFrame(demo); };
+    var mo=new MutationObserver(function(){ if(!shown && (box.classList.contains('in')||!sl.classList.contains('cue-wait'))){ shown=true; mo.disconnect(); setTimeout(function(){ requestAnimationFrame(demo); },700); } });
+    mo.observe(box,{attributes:true,attributeFilter:['class']}); mo.observe(sl,{attributes:true,attributeFilter:['class']});
+    if(!sl.classList.contains('cue-wait')){ shown=true; mo.disconnect(); }
+  };
+
   /* ---------- 2.2 vizorul ---------- */
   R.vizor=function(sl,cur,api){
     var D=EX('vizor'), box=$('#vizor',sl), st=$('.vz-stage',box), img=$('img',st), fr=$('.vz-frame',st), out=$('.vz-out',box), crop=$('.vz-crop',out), fb=$('.fb',out);
